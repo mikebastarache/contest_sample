@@ -1,0 +1,16 @@
+﻿@using MyResources = mm_contest.Web.Resources._HomeResources
+
+@{
+    ViewBag.Title = MyResources.Privacy_PageTitle;
+    Layout = "~/Views/Shared/_LayoutPopUp.cshtml";
+}
+
+@{
+    if(Session["Culture"].ToString() == "fr-CA") {
+      @RenderPage("privacy_fr.cshtml")
+
+    } else {
+      @RenderPage("privacy_en.cshtml")
+        
+    }
+}

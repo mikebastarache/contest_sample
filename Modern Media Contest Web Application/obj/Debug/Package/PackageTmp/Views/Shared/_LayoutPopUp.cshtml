@@ -1,0 +1,41 @@
+﻿@using MyResources = mm_contest.Web.Resources._LayoutResources
+@using MyProperties = mm_contest.Properties.Settings
+
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/css")">
+
+    <!--[if lt IE 9]>
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <style type="text/css" media="all">
+        body {
+            padding: 20px 10px 20px 10px;
+            margin: 0px;
+            background:#FFF;
+            color:#000;
+        }
+        a {
+            color:#000 !important;
+        }
+    </style>
+</head>
+<body>
+        @RenderBody()
+
+</body>
+</html>

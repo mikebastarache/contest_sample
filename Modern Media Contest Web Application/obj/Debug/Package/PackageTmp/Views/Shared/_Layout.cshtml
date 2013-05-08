@@ -1,0 +1,138 @@
+﻿@using MyResources = mm_contest.Web.Resources._LayoutResources
+@using MyProperties = mm_contest.Properties.Settings
+
+@{
+    ViewBag.GoogleAnalyticsCode = @MyProperties.Default.GoogleAnalytics_En;
+    if(Session["Culture"].ToString() == "fr-CA")
+        ViewBag.GoogleAnalyticsCode =  @MyProperties.Default.GoogleAnalytics_Fr;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@MyResources.SiteTitle | @ViewBag.Title</title>
+    <meta property="og:title" content="@MyResources.MetaLinkTitle"/>
+    <meta property="og:url" content="@((Session["Culture"].ToString() == "fr-CA") ? @MyProperties.Default.ContestUrl_Fr : @MyProperties.Default.ContestUrl_En)"/>
+    <meta property="og:description" content="@MyResources.MetaDescription"/>
+    <meta property="og:image" content="@((Session["Culture"].ToString() == "fr-CA") ? @MyProperties.Default.ContestUrl_Fr : @MyProperties.Default.ContestUrl_En)Content/images/@MyResources.MetaImage"/>
+    <meta property="og:site_name" content="@MyResources.MetaSiteName"/>
+    
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+	<link rel="stylesheet" href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/css")">
+
+    <!--[if lt IE 9]>
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico">
+    <link rel="apple-touch-icon" href="~/Content/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Content/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Content/images/apple-touch-icon-114x114.png">
+</head>
+<body>
+<!-- Primary Page Layout
+================================================== -->
+
+<div class="container">
+    <div class="row">
+	    <header class="sixteen columns">
+            <!-- Navbar
+            ================================================== -->
+            <nav>
+                <ul>
+	                <li>@Html.ActionLink(MyResources.NavHome, "Index", "Home")</li>
+	                <li>|</li>
+	                <li>@Html.ActionLink(MyResources.NavRules, "Rules", "Home")</li>
+	                <li>|</li>
+	                <li>@Html.ActionLink(MyResources.NavPrizes, "Prizes", "Home")</li>
+	                <li>|</li>
+	                @Html.Partial("_LanguageSwitcher")
+                </ul>
+            </nav><!-- nav -->
+
+            <div id="share">					
+                <!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style addthis_default_style">						
+	                <a class="addthis_button_preferred_1"></a>
+	                <a class="addthis_button_preferred_2"></a>
+	                <a class="addthis_button_preferred_3"></a>
+	                <a class="addthis_button_compact"></a>
+	                <a class="addthis_counter addthis_bubble_style"></a>
+                </div>
+                <!-- AddThis Button END -->
+            </div><!-- share -->
+        </header><!-- header -->
+    </div><!-- row -->
+
+    <!-- Content
+    ================================================== -->
+    @RenderBody()
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="sixteen columns">
+        <div class="row">
+            <nav>
+                <ul>
+	                <li><a href="@MyResources.NavUnsubscribeUrl" target="_blank">@MyResources.NavUnsubscribe</a></li>
+	                <li>|</li>
+	                <li><a href="@MyResources.NavUpdateProfileUrl" target="_blank">@MyResources.NavUpdateProfile</a></li>
+	                <li>|</li>
+	                <li>@Html.ActionLink(MyResources.NavPrivacy, "PrivacyPolicy", "Home")</li>
+                </ul>
+            </nav><!-- nav -->
+
+            <div id="shortRules">
+                @Html.Raw(MyResources.ShortRules)
+            </div>
+        </div><!-- row -->
+    </footer><!-- footer -->
+
+</div><!-- container -->
+
+    @RenderSection("css", required: false)
+   
+    <!--[if lt IE 10 ]>
+    <link rel="stylesheet" href="/Content/stylesheets/ie.css" />
+    <![endif]-->
+
+    <!-- The javascript
+    ================================================== -->
+	<script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/bundles/jquery")"></script>
+	
+    @RenderSection("scripts", required: false)
+
+    <!-- AddThis Javascript BEGIN -->
+	<script type="text/javascript">
+	    var addthis_config = { "data_track_addressbar": false };
+	</script>
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=aarsene"></script>
+	<!-- AddThis Javascript END -->
+
+    <!-- Analytics
+    ================================================== -->
+	<script type="text/javascript">
+
+	    var _gaq = _gaq || [];
+	    _gaq.push(['_setAccount', '@ViewBag.GoogleAnalyticsCode']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+    </script>
+	<!-- Google Analytics Javascript END -->
+</body>
+</html>

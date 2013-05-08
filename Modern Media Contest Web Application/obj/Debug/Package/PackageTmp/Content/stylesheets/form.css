@@ -1,0 +1,200 @@
+﻿/* STYLES FOR VALIDATION ERROR MESSAGES -*/
+
+.field-validation-error {
+    color: #ff0000;
+    clear:both;
+    display:inline;
+    margin:0px auto 0px 0px;
+    clear:both;
+    font-size:11px;
+    font-weight:bold;
+    padding: 0px 0px 10px 0px;
+    width:100%;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+    clear:both;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.fieldRequired {
+    visibility:hidden;
+    position:absolute;
+    display:inline;
+    color:#e86263;
+    font-weight:bold;
+    margin:0px 0px 0px 5px;
+    font-size:0em;
+    line-height:0px;
+    width:0px;
+}
+
+.form-block ul {
+    width:100%;
+    list-style-type:none;
+	list-style-position:outside;
+	margin:10px 0px 10px 0px;
+	padding:0px;
+    z-index:2;
+}
+.form-block li{
+	padding:0px 0px; 
+	position:relative;
+    clear: both;
+    z-index:2;
+}
+
+
+/* === DEFAULT FORM STYLES === */	
+label {
+	width:100%;
+	display:block;
+	padding:3px;
+    font-weight:bold;
+}
+
+.checkboxLabel {
+    font-size:10px;
+    line-height:normal;
+    font-family:Arial;
+}
+
+input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	textarea,
+	select {
+	border: 1px solid #ccc;
+	padding: 6px 4px;
+	outline: none;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #777;
+	margin: 0;
+	width: 100%;
+	max-width: 100%;
+	display: block;
+	margin-bottom: 0px;
+	background: #fff;
+}
+
+select {
+	padding: 6px 4px;
+	width: 101%;
+	max-width: 101%;
+}
+
+.checkboxLabel {
+	display:inline-block;
+    padding:0px;
+    margin:5px;
+    position:absolute;
+}
+
+input[type="radio"] {
+	height:15px; 
+	width:15px; 
+	padding:5px 8px;
+}
+
+input[type="checkbox"] {
+	height:15px; 
+	width:15px; 
+	margin:px 8px 0px 0px;
+    vertical-align: top;
+    border: none;
+	box-shadow:none;
+	padding-right:0px;
+	background:transparent;
+}
+
+textarea {padding:8px; width:100%;}
+
+
+/* === FOCUS STYLES === */	
+input:focus, input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focus {
+	background: #fff; 
+	border:1px solid #555; 
+	box-shadow: 0 0 3px #aaa;
+}
+/* radio-button form element visual styles */
+input[type="radio"] {
+	border: none;
+	box-shadow:none;
+	padding-right:0px;
+	background: transparent;
+}
+input[type="radio"]:focus {
+	background:transparent; 
+	border:none; 
+	box-shadow:none;
+}
+input[type="checkbox"]:focus {
+	background:transparent; 
+	border:none; 
+	box-shadow:none;
+}
+
+
+/* === REQUIRED STYLES === */	
+input:required, input[type="text"]:required, input[type="email"]:required, textarea:required, select:required {
+	background: #fff url(/Content/images/red_asterisk.png) no-repeat 98% center;
+}
+input:required:valid, input[type="email"]:valid, textarea:required:valid, select:required:valid {
+	background: #fff url(/Content/images/valid.png) no-repeat 98% center;
+	box-shadow: 0 0 5px #5cd053;
+	border-color: #28921f;
+}
+input:focus:invalid, input[type="text"]:focus:invalid, input[type="email"]:focus:invalid, textarea:focus:invalid, select:focus:invalid {
+	background: #fff url(/Content/images/invalid.png) no-repeat 98% center;
+	box-shadow: 0 0 5px #d45252;
+	border-color: #b03535
+}
+input[type="radio"]:required {
+	background:transparent; 
+	border:none; 
+	box-shadow:none;
+}
+
+
+
+/* === Form hints === */
+.form_hint {
+    clear:both;
+	background: #d45252;
+	border-radius: 3px 3px 3px 3px;
+	color: white;
+	padding: 6px;
+	z-index: 999; /* hints stay above all other elements */
+	position:relative; /* allows proper formatting if hint is two lines */
+    width: 100%;
+    top:3px;
+	display: none;
+    font-size:11px;
+}
+
+input:focus + .form_hint {display: block;}
+input:required:valid + .form_hint {background: #28921f;}
+input:required:valid + .form_hint::before {color:#28921f;}
+
+select:focus + .form_hint {display: block;}
+select:required:valid + .form_hint {background: #28921f;}
+select:required:valid + .form_hint::before {color:#28921f;}
+
+
+/* === Remove input autofocus webkit === */
+*:focus {outline: none;}
+
+/* === Form Typography === */
+.required_notification {font-size: 11px;}

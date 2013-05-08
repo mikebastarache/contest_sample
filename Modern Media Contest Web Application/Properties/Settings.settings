@@ -1,0 +1,48 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="mm_contest.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ContestUrl_En" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ContestUrl_Fr" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BallotSource" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">microsite</Value>
+    </Setting>
+    <Setting Name="Domain_Fr" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Domain_En" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ApplicationPath_En" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ApplicationPath_Fr" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ContestId" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="ContestStartDate" Type="System.DateTime" Scope="Application">
+      <Value Profile="(Default)">2013-01-01</Value>
+    </Setting>
+    <Setting Name="ContestCloseDate" Type="System.DateTime" Scope="Application">
+      <Value Profile="(Default)">12/31/2013 11:59:00</Value>
+    </Setting>
+    <Setting Name="WebApiUri" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://www.royalepromotions.ca</Value>
+    </Setting>
+    <Setting Name="AdminEmail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mbastarache@modernmedia.ca</Value>
+    </Setting>
+    <Setting Name="GoogleAnalytics_En" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="GoogleAnalytics_Fr" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

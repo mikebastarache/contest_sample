@@ -1,0 +1,57 @@
+﻿@using MyResources = mm_contest.Web.Resources._InviteResources
+@using MyProperties = mm_contest.Properties.Settings
+@model mm_contest.ViewModels.InviteViewModel
+
+@{
+    ViewBag.Title = MyResources.Invite_PageTitle;
+}
+
+<div class="sixteen columns">
+    <h1>@MyResources.Invite_PageTitle</h1>
+    <p>@Html.Raw(MyResources.Invite_PageContent)</p>
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-block" })) {
+    @Html.ValidationSummary(true)
+
+    <input type="hidden" name="Email" value="@Session["Email"]" />
+    <input type="hidden" name="Language" value="@Session["Culture"].ToString()" />
+    <input type="hidden" name="ContestSignupId" value="@MyProperties.Default.ContestId" />
+
+    <div id="form-block">
+        <ul>
+        <li>
+            <span class="required_notification">@MyResources.RequiredFields</span>
+        </li>
+
+        <li>
+            @Html.LabelFor(model => model.InviteFirstName, MyResources.LabelFirstName)
+            @Html.TextBoxFor(model => model.InviteFirstName, new { @required = "required" })<span class="fieldRequired">*</span>
+            @Html.ValidationMessageFor(model => model.InviteFirstName, @MyResources.ValidationFirstName)
+        </li>
+
+        <li>
+            @Html.LabelFor(model => model.InviteLastName, MyResources.LabelLastName)
+            @Html.TextBoxFor(model => model.InviteLastName, new { @required = "required" })<span class="fieldRequired">*</span>
+            @Html.ValidationMessageFor(model => model.InviteLastName, @MyResources.ValidationLastName)
+        </li>
+
+        <li>
+            @Html.LabelFor(model => model.InviteEmail, MyResources.LabelEmail)
+            @Html.TextBoxFor(model => model.InviteEmail, new { @required = "required" })<span class="fieldRequired">*</span>
+            @Html.ValidationMessageFor(model => model.InviteEmail, @MyResources.ValidationEmail)
+        </li>
+        
+        <li><p>@Html.Raw(ViewBag.CountsContent)</p></li>
+
+        <li>
+            <button type="submit">@MyResources.Invite_Button</button>
+        </li>
+    </ul>
+
+    </div>
+    }
+</div>
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}

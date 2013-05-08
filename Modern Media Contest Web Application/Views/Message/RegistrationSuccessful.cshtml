@@ -1,0 +1,11 @@
+﻿@using MyResources = mm_contest.Web.Resources._MessageResources
+
+@{
+    ViewBag.Title = MyResources.RegistrationSuccessful_PageTitle;
+}
+
+<div id="message-block">
+    <h1>@MyResources.Congratulations</h1>
+    <p>@Html.Raw(MyResources.RegistrationSuccessful_Message)</p>
+    <p><a href="/invite/">Click here</a> to invite friends.</p>
+</div>

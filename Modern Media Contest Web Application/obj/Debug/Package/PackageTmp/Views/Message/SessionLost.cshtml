@@ -1,0 +1,10 @@
+﻿@using MyResources = mm_contest.Web.Resources._MessageResources
+
+@{
+    ViewBag.Title = MyResources.SessionLost_PageTitle;
+}
+
+<div id="message-block">
+    <h1>@MyResources.WeAreSorry</h1>
+    <p>@Html.Raw(MyResources.SessionLost_Message)</p>
+</div>

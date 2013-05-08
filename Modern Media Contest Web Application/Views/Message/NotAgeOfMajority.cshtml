@@ -1,0 +1,14 @@
+﻿@using MySharedResources = mm_contest.Web.Resources._LayoutResources
+@using MyResources = mm_contest.Web.Resources._MessageResources
+@using MyProperties = mm_contest.Properties.Settings
+
+@{
+    ViewBag.Title = MyResources.NotAgeOfMajority_PageTitle;
+    ViewBag.Content = @MyResources.NotAgeOfMajority_Message.Replace("[admin@email.com]", @MyProperties.Default.AdminEmail);
+    ViewBag.Content = @ViewBag.Content.Replace("[Contest-Name]", @MySharedResources.SiteTitle);
+}
+
+<div id="message-block">
+    <h1>@MyResources.WeAreSorry</h1>
+    <p>@Html.Raw(ViewBag.Content)</p>
+</div>

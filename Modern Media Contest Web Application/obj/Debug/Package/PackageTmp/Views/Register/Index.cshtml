@@ -1,0 +1,125 @@
+﻿@using MyResources = mm_contest.Web.Resources._RegistrationResource
+@using MyProperties = mm_contest.Properties.Settings
+@model mm_contest.ViewModels.UserViewModel
+
+@{
+    ViewBag.Title = MyResources.Registration_PageTitle;
+    var now = DateTime.Now;
+    var Years = Enumerable.Range(0, 90).Select(x => new SelectListItem { Value = ((now.Year - 18) - x).ToString(), Text = ((now.Year - 18) - x).ToString() });
+    var friendId = 0;
+    
+    if(Session["friendId"] != null) {
+        friendId = Int32.Parse(Session["friendId"].ToString());
+    }
+}
+
+<div class="sixteen columns">
+    <h1>@MyResources.Registration_PageTitle</h1>
+    <p>@MyResources.Registration_Intro</p>
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-block" }))
+    {
+    @Html.ValidationSummary(true)
+
+    <input type="hidden" name="Email" value="@Session["Email"]" />
+    <input type="hidden" name="Language" value="@Session["Culture"].ToString()" />
+    <input type="hidden" name="ContestSignupId" value="@MyProperties.Default.ContestId" />
+    <input type="hidden" name="OriginalFriendId" value="@friendId" />
+     
+    <div id="form-block-registration">
+        <ul>
+        <li>
+            <span class="required_notification">@MyResources.RequiredFields</span>
+        </li>
+                
+        <li>
+            @Html.LabelFor(model => model.Salutation, MyResources.LabelSalutation)
+            @Html.RadioButtonFor(model => model.Salutation, "1", new { @required = "required" })   @MyResources.LabelMr
+            @Html.RadioButtonFor(model => model.Salutation, "2", new { @required = "required" })   @MyResources.LabelMs<span class="fieldRequired">*</span>
+            @Html.ValidationMessageFor(model => model.Salutation, @MyResources.ValidationSalutation)
+        </li>
+
+        <li>
+            @Html.LabelFor(model => model.FirstName, MyResources.LabelFirstName)
+            @Html.TextBoxFor(model => model.FirstName, new { @required = "required" })<span class="fieldRequired">*</span>
+            @Html.ValidationMessageFor(model => model.FirstName, @MyResources.ValidationFirstName)
+        </li>
+                
+        <li>
+            @Html.LabelFor(model => model.LastName, MyResources.LabelLastName)
+            @Html.TextBoxFor(model => model.LastName, new { @required = "required" })<span class="fieldRequired">*</span>
+            @Html.ValidationMessageFor(model => model.LastName, @MyResources.ValidationLastName)
+        </li>
+                
+        <li>
+            @Html.LabelFor(model => model.Address1, MyResources.LabelAddress1)
+            @Html.TextBoxFor(model => model.Address1, new { @required = "required" })<span class="fieldRequired">*</span>
+            @Html.ValidationMessageFor(model => model.Address1, @MyResources.ValidationAddress)
+        </li>
+                
+        <li>
+            @Html.LabelFor(model => model.Address2, MyResources.LabelAddress2)
+            @Html.TextBoxFor(model => model.Address2)
+        </li>
+                
+        <li>
+            @Html.LabelFor(model => model.City, MyResources.LabelCity)
+            @Html.TextBoxFor(model => model.City, new { @required = "required" })<span class="fieldRequired">*</span>
+            @Html.ValidationMessageFor(model => model.City, @MyResources.ValidationCity)
+        </li>
+                
+        <li>
+            @Html.LabelFor(model => model.Province, MyResources.LabelProvince)
+            @Html.DropDownListFor(model => model.Province, (SelectList)ViewBag.Province, @MyResources.Select, new { @required = "required"})<span class="fieldRequired">*</span>
+            @Html.ValidationMessageFor(model => model.Province, @MyResources.ValidationProvince)
+        </li>
+                
+        <li>
+            @Html.LabelFor(model => model.PostalCode, MyResources.LabelPostalCode)
+            @Html.TextBoxFor(model => model.PostalCode, new { @required = "required", @placeholder="A1A 1A1", @pattern="[abceghjklmnprstvxyABCEGHJKLMNPRSTVXY]{1}\\d{1}[A-Za-z]{1} *\\d{1}[A-Za-z]{1}\\d{1}" })<span class="fieldRequired">*</span>
+            @Html.ValidationMessageFor(model => model.PostalCode, @MyResources.ValidationPostalCode)
+        </li>
+                
+        <li>
+            @Html.LabelFor(model => model.Telephone, MyResources.LabelTelephone)
+            @Html.TextBoxFor(model => model.Telephone, new { @required = "required", @placeholder="(555) 555-5555", @pattern="(1\\s*[-\\/\\.]?)?(\\((\\d{3})\\)|(\\d{3}))\\s*[-\\/\\.]?\\s*(\\d{3})\\s*[-\\/\\.]?\\s*(\\d{4})\\s*(([xX]|[eE][xX][tT])\\.?\\s*(\\d+))*" })<span class="fieldRequired">*</span>
+            @Html.ValidationMessageFor(model => model.Telephone, @MyResources.ValidationTelephone)
+        </li>
+                
+        <li>
+            @Html.LabelFor(model => model.YearOfBirth, MyResources.LabelYearOfBirth)
+            @Html.DropDownListFor(model => model.YearOfBirth, Years,  @MyResources.Select, new { @required = "required"})
+            <span class="form_hint">@MyResources.HintYearOfBirth</span><span class="fieldRequired">*</span>
+            @Html.ValidationMessageFor(model => model.YearOfBirth, @MyResources.ValidationYearOfBirth)
+        </li>
+                
+        <li>
+            @Html.CheckBoxFor(model => model.OptIn, new { @checked = "checked" })
+            @Html.LabelFor(model => model.OptIn, MyResources.LabelOptin, "", new { @class = "checkboxLabel" })
+        </li>
+
+        <li><br />
+            <button type="submit">@MyResources.ButtonSubmit</button>
+        </li>
+    </ul>
+    </div>
+    }
+</div>
+
+@section Scripts {
+	<script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/bundles/jqueryval")"></script>
+
+    <script type="text/javascript">
+        jQuery.validator.addMethod("enforcetrue", function (value, element, param) {
+            return element.checked;
+        });
+        jQuery.validator.unobtrusive.adapters.addBool("enforcetrue");
+
+        $(document).ready(function () {
+            $(".rulesPopUp").colorbox({ iframe: true, width: "80%", height: "80%" });
+            $(".privacyPopUp").colorbox({ iframe: true, width: "80%", height: "80%" });
+        });
+    </script>
+}
+	
+@section css {}

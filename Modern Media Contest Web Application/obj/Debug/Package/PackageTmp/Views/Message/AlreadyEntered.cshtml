@@ -1,0 +1,10 @@
+﻿@using MyResources = mm_contest.Web.Resources._MessageResources
+
+@{
+    ViewBag.Title = MyResources.AlreadyEntered_PageTitle;
+}
+
+<div id="message-block">
+    <h1>@MyResources.WeAreSorry</h1>
+    <p>@Html.Raw(MyResources.AlreadyEntered_Message)</p>
+</div>

@@ -1,0 +1,12 @@
+﻿@using MyResources = mm_contest.Web.Resources._MessageResources
+@using MyProperties = mm_contest.Properties.Settings
+
+@{
+    ViewBag.Title = MyResources.AccountUpdateFailed_PageTitle;
+    ViewBag.Content = @MyResources.AccountUpdateFailed_Message.Replace("[admin@email.com]", @MyProperties.Default.AdminEmail);
+}
+
+<div id="message-block">
+    <h1>@MyResources.WeAreSorry</h1>
+    <p>@Html.Raw(ViewBag.Content)</p>
+</div>

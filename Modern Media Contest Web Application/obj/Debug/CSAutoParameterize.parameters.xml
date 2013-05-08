@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="crmContext-Web.config Connection String" description="crmContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=MISSPIGGY;Initial Catalog=MajestaCRM_2011;Persist Security Info=True;User ID=sa;Password=M0d3rn!234;MultipleActiveResultSets=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\contest_library_project_template\\Modern\ Media\ Contest\ Web\ Application\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='crmContext']/@connectionString" />
+  </parameter>
+</parameters>

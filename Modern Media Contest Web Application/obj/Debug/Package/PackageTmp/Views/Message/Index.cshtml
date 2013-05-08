@@ -1,0 +1,13 @@
+﻿@using MyResources = mm_contest.Web.Resources._MessageResources
+@using MyProperties = mm_contest.Properties.Settings
+
+@{
+    ViewBag.Title = MyResources.Index_PageTitle;
+    ViewBag.Content = @MyResources.Index_Message.Replace("[admin@email.com]", @MyProperties.Default.AdminEmail);
+}
+
+<div id="message-block">
+    <h1>@MyResources.WeAreSorry</h1>
+    <p>@Html.Raw(ViewBag.Content)</p>
+    <fieldset><legend>@MyResources.ErrorDetails</legend>@Request.QueryString</fieldset>
+</div>

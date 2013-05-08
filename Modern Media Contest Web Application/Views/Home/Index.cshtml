@@ -1,0 +1,56 @@
+﻿@using MyResources = mm_contest.Web.Resources._HomeResources
+@model mm_contest.ViewModels.VerifyUserViewModel
+
+@{
+    ViewBag.Title = MyResources.Index_PageTitle;
+}
+
+<div class="row clearfix">
+    <div class="sixteen columns">
+        <h1>@MyResources.Index_PageTitle</h1>
+
+        @Html.Raw(MyResources.Index_PageContent)
+
+        @Html.ValidationSummary(true)
+
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-block" }))
+        {
+        <ul>
+            <li>
+                <strong>@Html.LabelFor(m => m.Email, MyResources.LabelEmail)</strong><span class="fieldRequired">*</span>
+                @Html.TextBoxFor(m => m.Email, new
+                {
+                    @required = "required",
+                    @type = "email"
+                })
+                @Html.ValidationMessageFor(m => m.Email, MyResources.ValidationEmail)
+            </li>
+            <li>
+                <table><tr><td style="vertical-align:top; text-align:right;">@Html.CheckBoxFor(m => m.AcceptRules)</td><td class="homecheckvalidation"><span class="fieldRequired">*</span></td>
+                    <td>@Html.LabelFor(m => m.AcceptRules, MyResources.LabelAcceptRules, "", new { @class = "checkboxLabel" })</td>
+                </tr></table>
+                @Html.ValidationMessageFor(m => m.AcceptRules, MyResources.ValidationAgreeRules)
+            </li>
+        </ul>
+        <button type="submit">@MyResources.Index_Button</button>
+        }
+    </div>
+</div><!-- row -->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        jQuery.validator.addMethod("enforcetrue", function (value, element, param) {
+            return element.checked;
+        });
+        jQuery.validator.unobtrusive.adapters.addBool("enforcetrue");
+
+        $(document).ready(function () {
+            $(".rulesPopUp").colorbox({ iframe: true, width: "80%", height: "80%" });
+            $(".privacyPopUp").colorbox({ iframe: true, width: "80%", height: "80%" });
+        });
+    </script>
+}
+	
+@section css {}
