@@ -1,0 +1,12 @@
+﻿.btn{
+    width:284px;
+	height:64px;
+	background-image: url(/Content/images/);
+	background-repeat: no-repeat;
+	background-position: top;
+	text-decoration:none;
+    cursor:pointer;
+    z-index:20;
+    background-color:transparent;
+    border:none;
+}

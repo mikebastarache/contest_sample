@@ -1,0 +1,178 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Modern Media Contest Web Application</Name>
+    <Description>This is the default contest template to create a contest for Modern Media web applications.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Modern Media Contest Web Application</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="Modern Media Contest Web Application.csproj" File="Modern Media Contest Web Application.csproj" ReplaceParameters="true">
+      <Folder Name="App_Data" TargetFolderName="App_Data" />
+      <Folder Name="App_Start" TargetFolderName="App_Start">
+        <ProjectItem ReplaceParameters="true" TargetFileName="BundleConfig.cs">BundleConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="FilterConfig.cs">FilterConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="LabelForExtension.cs">LabelForExtension.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RouteConfig.cs">RouteConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="WebApiConfig.cs">WebApiConfig.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Classes" TargetFolderName="Classes">
+        <ProjectItem ReplaceParameters="true" TargetFileName="BooleanRequiredAttribute.cs">BooleanRequiredAttribute.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CheckApplicationStateAttribute.cs">CheckApplicationStateAttribute.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Content" TargetFolderName="Content">
+        <Folder Name="images" TargetFolderName="images">
+          <ProjectItem ReplaceParameters="false" TargetFileName="border.png">border.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="controls.png">controls.png</ProjectItem>
+          <Folder Name="ie6" TargetFolderName="ie6">
+            <ProjectItem ReplaceParameters="false" TargetFileName="borderBottomCenter.png">borderBottomCenter.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="borderBottomLeft.png">borderBottomLeft.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="borderBottomRight.png">borderBottomRight.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="borderMiddleLeft.png">borderMiddleLeft.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="borderMiddleRight.png">borderMiddleRight.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="borderTopCenter.png">borderTopCenter.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="borderTopLeft.png">borderTopLeft.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="borderTopRight.png">borderTopRight.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="Thumbs.db">Thumbs.db</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="false" TargetFileName="invalid.png">invalid.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="loading_background.png">loading_background.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="overlay.png">overlay.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="red_asterisk.png">red_asterisk.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="valid.png">valid.png</ProjectItem>
+        </Folder>
+        <Folder Name="stylesheets" TargetFolderName="stylesheets">
+          <ProjectItem ReplaceParameters="true" TargetFileName="base.css">base.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="buttons.css">buttons.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="colorbox.css">colorbox.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="form.css">form.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ie.css">ie.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="layout.css">layout.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="skeleton.css">skeleton.css</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Controllers" TargetFolderName="Controllers">
+        <ProjectItem ReplaceParameters="true" TargetFileName="HomeController.cs">HomeController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="InviteController.cs">InviteController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="LanguageSwitcherController.cs">LanguageSwitcherController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MessageController.cs">MessageController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RegisterController.cs">RegisterController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="VoteController.cs">VoteController.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
+      <Folder Name="Models" TargetFolderName="Models" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.settings">Settings.settings</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.Designer.cs">Settings.Designer.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Scripts" TargetFolderName="Scripts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="_references.js">_references.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.8.2.intellisense.js">jquery-1.8.2.intellisense.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.8.2.js">jquery-1.8.2.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.8.2.min.js">jquery-1.8.2.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.9.2.js">jquery-ui-1.9.2.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.9.2.min.js">jquery-ui-1.9.2.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.colorbox-min.js">jquery.colorbox-min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.colorbox.js">jquery.colorbox.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.unobtrusive-ajax.js">jquery.unobtrusive-ajax.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.unobtrusive-ajax.min.js">jquery.unobtrusive-ajax.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate-vsdoc.js">jquery.validate-vsdoc.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.js">jquery.validate.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.min.js">jquery.validate.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.unobtrusive.js">jquery.validate.unobtrusive.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.unobtrusive.min.js">jquery.validate.unobtrusive.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.2.0.debug.js">knockout-2.2.0.debug.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.2.0.js">knockout-2.2.0.js</ProjectItem>
+      </Folder>
+      <Folder Name="ViewModels" TargetFolderName="ViewModels">
+        <ProjectItem ReplaceParameters="true" TargetFileName="HomeViewModels.cs">HomeViewModels.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="InviteViewModels.cs">InviteViewModels.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="LegalAgeViewModels.cs">LegalAgeViewModels.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="UserViewModels.cs">UserViewModels.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="VoteViewModels.cs">VoteViewModels.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Views" TargetFolderName="Views">
+        <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+        <Folder Name="Home" TargetFolderName="Home">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_HomeResources.fr-CA.resx">_HomeResources.fr-CA.resx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_HomeResources.fr-CA.Designer.cs">_HomeResources.fr-CA.Designer.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_HomeResources.resx">_HomeResources.resx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_HomeResources.Designer.cs">_HomeResources.Designer.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="privacy_en.cshtml">privacy_en.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="privacy_fr.cshtml">privacy_fr.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="PrivacyPolicy.cshtml">PrivacyPolicy.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="PrivacyPolicyPopUp.cshtml">PrivacyPolicyPopUp.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Prizes.cshtml">Prizes.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Rules.cshtml">Rules.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="rules_en.cshtml">rules_en.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="rules_fr.cshtml">rules_fr.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="RulesPopUp.cshtml">RulesPopUp.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Invite" TargetFolderName="Invite">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_InviteResources.fr-CA.resx">_InviteResources.fr-CA.resx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_InviteResources.fr-CA.Designer.cs">_InviteResources.fr-CA.Designer.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_InviteResources.resx">_InviteResources.resx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_InviteResources.Designer.cs">_InviteResources.Designer.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Message" TargetFolderName="Message">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_MessageResources.fr-CA.resx">_MessageResources.fr-CA.resx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_MessageResources.fr-CA.Designer.cs">_MessageResources.fr-CA.Designer.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_MessageResources.resx">_MessageResources.resx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_MessageResources.Designer.cs">_MessageResources.Designer.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="AccountCreationFailed.cshtml">AccountCreationFailed.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="AccountUpdateFailed.cshtml">AccountUpdateFailed.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="AlreadyEntered.cshtml">AlreadyEntered.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="BallotError.cshtml">BallotError.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ContestClosed.cshtml">ContestClosed.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ContestNotOpen.cshtml">ContestNotOpen.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="NotAgeOfMajority.cshtml">NotAgeOfMajority.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="RegistrationSuccessful.cshtml">RegistrationSuccessful.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="SessionLost.cshtml">SessionLost.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="UserDoesNotExist.cshtml">UserDoesNotExist.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="PartialViews" TargetFolderName="PartialViews" />
+        <Folder Name="Register" TargetFolderName="Register">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_RegistrationResource.fr-CA.resx">_RegistrationResource.fr-CA.resx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_RegistrationResource.fr-CA.Designer.cs">_RegistrationResource.fr-CA.Designer.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_RegistrationResource.resx">_RegistrationResource.resx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_RegistrationResource.Designer.cs">_RegistrationResource.Designer.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Shared" TargetFolderName="Shared">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_LanguageSwitcher.cshtml">_LanguageSwitcher.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_LayoutPopUp.cshtml">_LayoutPopUp.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_LayoutResources.fr-CA.resx">_LayoutResources.fr-CA.resx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_LayoutResources.fr-CA.Designer.cs">_LayoutResources.fr-CA.Designer.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_LayoutResources.resx">_LayoutResources.resx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_LayoutResources.Designer.cs">_LayoutResources.Designer.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Error.cshtml">Error.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Vote" TargetFolderName="Vote">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_VoteResources.resx">_VoteResources.resx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_VoteResources.Designer.cs">_VoteResources.Designer.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
